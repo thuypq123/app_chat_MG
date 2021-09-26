@@ -7,7 +7,7 @@ const url = "mongodb+srv://socket_io:thuy1234@cluster0.uhkg4.mongodb.net/socket_
 
 async function connect(){
     try {
-        await mongoose.connect(url,{ useUnifiedTopology: true });
+        await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log('Success Connected');
     } catch (error) {
         console.log("error");
