@@ -9,7 +9,7 @@ var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 
 //================================
 async function connect(){
     try {
-        await mongoose.connect(url, options);
+        await mongoose.connect(process.env.MONGODB_URI||url, options);
         console.log('Success Connected');
     } catch (error) {
         console.log("error");
